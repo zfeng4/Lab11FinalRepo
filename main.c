@@ -65,67 +65,10 @@ void main(void)
     CLOCK_init();
     BUTTONS_init();
     CONTROLLER_init();
-    //UART_init();
-    
-
-    // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
-    // Use the following macros to:
-
-    // Enable the Global Interrupts
-    //INTERRUPT_GlobalInterruptEnable();
-
-    // Enable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptEnable();
-
-    // Disable the Global Interrupts
-    //INTERRUPT_GlobalInterruptDisable();
-
-    // Disable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptDisable();
     DMX_init();
     LED_init();
     BEAT_init();
     
-    /*while(1){
-        //Red
-        LED_setColor(200, 0, 0, 0);
-        __delay_ms(10000);
-        //Orange
-        LED_setColor(200, 200, 0, 0);
-        __delay_ms(10000);
-        //Yellow
-        LED_setColor(70, 200, 0, 0);
-        __delay_ms(10000);
-        //Green
-        LED_setColor(0, 200, 0, 0);
-        __delay_ms(10000);
-        //Turquoise
-        LED_setColor(0, 200, 200, 0);
-        __delay_ms(10000);
-        //Blue
-        LED_setColor(0, 0, 200, 0);
-        __delay_ms(10000);
-        //Purple
-        LED_setColor(14, 0, 200, 0);
-        __delay_ms(10000);
-        //Magenta
-        LED_setColor(200, 0, 200, 0);
-        __delay_ms(10000);
-        //White
-        LED_setColor(0, 0, 0, 250);
-        __delay_ms(10000);
-    }*/
-    
-    //police lights code
-    /*while(1){
-        LED_setColor(100, 0, 0, 0);
-        __delay_ms(500);
-        LED_setColor(0, 0, 100, 0);
-        __delay_ms(500);
-        LED_setColor(0, 0, 0, 100);
-        __delay_ms(500);
-    }*/
-        
     while (1)
     {
         BUTTONS_task();
@@ -175,9 +118,8 @@ void main(void)
                     //White
                     LED_setColor(0, 0, 0, 250);
                 }
-                //LED_setColor(100, 100, 100, 100);
             } else {
-                //LED_setColor(0, 0, 0, 0);
+                
             }
         }
     }
