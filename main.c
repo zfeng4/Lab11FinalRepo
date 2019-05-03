@@ -79,47 +79,116 @@ void main(void)
         if((CLOCK_getTime() - lastActiveDMXTime) <= 50){
             LED_setColor(inputArray[address], inputArray[address+1], inputArray[address+2], inputArray[address+3]);
         } else if ((CLOCK_getTime() - lastActiveDMXTime) > 50) {
-            //beat detection
-            time_t time = CLOCK_getTime();
+            if(address == 1){
+                //beat detection
+                time_t time = CLOCK_getTime();
         
-            if(time - lastTime < 100){
-                continue;
-            }
-        
-            lastTime = time;
-        
-            if(BEAT_detected()){
-                int randomNumber = rand() % 10;
-                if(randomNumber == 0) {
-                    //Red
-                    LED_setColor(200, 0, 0, 0);
-                } else if (randomNumber == 1) {
-                    //Orange
-                    LED_setColor(200, 200, 0, 0);
-                } else if (randomNumber == 2) {
-                    //Yellow
-                    LED_setColor(70, 200, 0, 0);
-                } else if (randomNumber == 3) {
-                    //Green
-                    LED_setColor(0, 200, 0, 0);
-                } else if (randomNumber == 4) {
-                    //Turquoise
-                    LED_setColor(0, 200, 200, 0);
-                } else if (randomNumber == 5) {
-                    //Blue
-                    LED_setColor(0, 0, 200, 0);
-                } else if (randomNumber == 6) {
-                    //Purple
-                    LED_setColor(14, 0, 200, 0);
-                } else if (randomNumber == 7) {
-                    //Magenta
-                    LED_setColor(200, 0, 200, 0);
-                } else if (randomNumber == 8) {
-                    //White
-                    LED_setColor(0, 0, 0, 250);
+                if(time - lastTime < 100){
+                    continue;
                 }
-            } else {
+        
+                lastTime = time;
+        
+                if(BEAT_detected()){
+                    int randomNumber = rand() % 10;
+                    if(randomNumber == 0) {
+                        //Red
+                        LED_setColor(200, 0, 0, 0);
+                    } else if (randomNumber == 1) {
+                        //Orange
+                        LED_setColor(200, 200, 0, 0);
+                    } else if (randomNumber == 2) {
+                        //Yellow
+                        LED_setColor(70, 200, 0, 0);
+                    } else if (randomNumber == 3) {
+                        //Green
+                        LED_setColor(0, 200, 0, 0);
+                    } else if (randomNumber == 4) {
+                        //Turquoise
+                        LED_setColor(0, 200, 200, 0);
+                    } else if (randomNumber == 5) {
+                        //Blue
+                        LED_setColor(0, 0, 200, 0);
+                    } else if (randomNumber == 6) {
+                        //Purple
+                        LED_setColor(14, 0, 200, 0);
+                    } else if (randomNumber == 7) {
+                        //Magenta
+                        LED_setColor(200, 0, 200, 0);
+                    } else if (randomNumber == 8) {
+                        //White
+                        LED_setColor(0, 0, 0, 250);
+                    }
+                    //LED_setColor(100, 100, 100, 100);
+                } else {
                 
+                }
+            } else if (address == 2) {
+                //Red
+                LED_setColor(200, 0, 0, 0);
+            } else if (address == 3) {
+                //Orange
+                LED_setColor(200, 200, 0, 0);
+            } else if (address == 4){
+                //Yellow
+                LED_setColor(70, 200, 0, 0);
+            } else if (address == 5) {
+                //Green
+                LED_setColor(0, 200, 0, 0);
+            } else if (address == 6) {
+                //Turquoise
+                LED_setColor(0, 200, 200, 0);
+            } else if (address == 7) {
+                //Blue
+                LED_setColor(0, 0, 200, 0);
+            } else if (address == 8) {
+                //Purple
+                LED_setColor(14, 0, 200, 0);
+            } else if (address == 9) {
+                //Magenta
+                LED_setColor(200, 0, 200, 0);
+            } else if (address == 10) {
+                //White
+                LED_setColor(0, 0, 0, 250);
+            } else if (address == 11) {
+                //police lights
+                LED_setColor(100, 0, 0, 0);
+                __delay_ms(500);
+                LED_setColor(0, 0, 100, 0);
+                __delay_ms(500);
+                LED_setColor(0, 0, 0, 100);
+                __delay_ms(450);
+            } else if (address == 12) {
+                //LSD Mode3
+                //Red
+                LED_setColor(200, 0, 0, 0);
+                __delay_ms(100);
+                //Orange
+                LED_setColor(200, 200, 0, 0);
+                __delay_ms(100);
+                //Yellow
+                LED_setColor(70, 200, 0, 0);
+                __delay_ms(100);
+                //Green
+                LED_setColor(0, 200, 0, 0);
+                __delay_ms(100);
+                //Turquoise
+                LED_setColor(0, 200, 200, 0);
+                __delay_ms(100);
+                //Blue
+                LED_setColor(0, 0, 200, 0);
+                __delay_ms(100);
+                //Purple
+                LED_setColor(14, 0, 200, 0);
+                __delay_ms(100);
+                //Magenta
+                LED_setColor(200, 0, 200, 0);
+                __delay_ms(100);
+                //White
+                LED_setColor(0, 0, 0, 250);
+                __delay_ms(100);
+            } else {
+                LED_setColor(0 ,0, 0, 0);
             }
         }
     }
